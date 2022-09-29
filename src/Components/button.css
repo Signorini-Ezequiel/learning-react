@@ -1,0 +1,12 @@
+/* ---------------------------------- */
+/* Estilos del componente Button */
+/* ---------------------------------- */
+
+.basic-button {
+    color: white;
+    background-color: cadetblue;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 20px;
+    font-weight: 600;
+}

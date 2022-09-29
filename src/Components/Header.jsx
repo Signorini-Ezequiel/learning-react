@@ -1,3 +1,4 @@
+import './header.css';
 import Button from './button.jsx';
 
 function Header(){

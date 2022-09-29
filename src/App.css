@@ -1,38 +1,4 @@
 /* ---------------------------------- */
-/* Estilos propios */
-/* ---------------------------------- */
-
-.basic-button {
-  color: white;
-  background-color: cadetblue;
-  border: none;
-  border-radius: 10px;
-  padding: 8px 20px;
-  font-weight: 600;
-}
-nav {
-  display: flex;
-}
-ul {
-  display: flex;
-}
-li {
-  list-style: none;
-  margin-right: 20px;
-}
-a {
-  text-decoration: none;
-  color: white;
-  transition: all .3s ease-out;
-}
-a:hover {
-  color: cadetblue;
-}
-
-
-
-
-/* ---------------------------------- */
 /* Estilos predefinidos */
 /* ---------------------------------- */
 .App {

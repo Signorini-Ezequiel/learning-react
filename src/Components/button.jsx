@@ -1,3 +1,5 @@
+// Importo el estilo CSS del componente
+import './button.css';
 // Estructura de un componente en donde incluyo props para personalizar información cada vez que se usa
 function Button (props){
     return(
