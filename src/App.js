@@ -1,5 +1,5 @@
-// import logo from './logo.svg';
 import './App.css';
+// Importo los componentes
 import Button from './Components/button.jsx';
 import Header from './Components/Header.jsx';
 
@@ -7,19 +7,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
+        {/* Uso el componente */}
         <Header/>
+        {/* Uso el componente, poniendo la información de sus props */}
         <Button content="Saber más" alert="La funcionalidad no está creada, saludos"/>
       </header>
     </div>

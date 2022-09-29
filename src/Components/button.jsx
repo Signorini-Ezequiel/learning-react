@@ -1,9 +1,8 @@
-// Estructura de un componente
+// Estructura de un componente en donde incluyo props para personalizar información cada vez que se usa
 function Button (props){
-    let buttonDoc = document.querySelector('.basic-button');
-    buttonDoc.addEventListener('click', function () {alert(props.alert);});
     return(
-        <button className="basic-button">{props.content}</button>
+        // Creo el contenido a mostrar por el componente, que usa los props
+        <button className="basic-button" onClick={()=>alert(props.alert)}>{props.content}</button>
     );
 }
 
