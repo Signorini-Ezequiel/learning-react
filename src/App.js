@@ -1,16 +1,23 @@
 import './App.css';
-// Importo los componentes
-import Button from './Components/button.jsx';
-import Header from './Components/Header.jsx';
+// Importo React-router-dom que es una librería de react para manejar rutas
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+// Importo las páginas a rutear
+import Home from './pages/home';
+import Game from './pages/game';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* Uso el componente */}
-        <Header/>
-        {/* Uso el componente, poniendo la información de sus props */}
-        <Button content="Saber más" alert="La funcionalidad no está creada, saludos"/>
+        {/* BrowserRouter nos permite conectar nuestra aplicación con la URL del browser */}
+        <BrowserRouter>
+        {/* Routes y route son los elementos que nos permiten configurar las rutas de nuestra aplicación */}
+          <Routes>
+            {/* Las rutas deben tener un path y un element */}
+            <Route path='/' element={<Home/>}/>
+            <Route path='/game' element={<Game/>}/>
+          </Routes>
+        </BrowserRouter>
       </header>
     </div>
   );

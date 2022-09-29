@@ -11,7 +11,7 @@ function Header(){
                     <li><a href="/">Descargas</a></li>
                 </ul>
                 <ul className="right">
-                    <Button content="Inicio" alert="Usted está en inicio"/>
+                    <Button content="Inicio"/>
                 </ul>
             </nav>
         </div>
