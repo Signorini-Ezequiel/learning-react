@@ -21,9 +21,9 @@ function Home() {
             {/* Uso el componente */}
                 <Header/>
                 {/* Uso el componente, poniendo la información de sus props */}
-                <Button content="Saber más" onclick={()=>alert(alert="La funcionalidad no está creada, saludos")}/>
+                {/* <Button content="Saber más" onclick={()=>alert(alert="La funcionalidad no está creada, saludos")}/> */}
                 {/* Creo un botón que implementa la función onClickButton para ir a la ruta indicada */}
-                <Button onclick={()=>onClickButton("/game")} content="Iniciar juego"/>
+                <Button onclick={()=>onClickButton("/game")} content="Ezequiel Signorini"/>
 
                 {/* Para ir a un sitio puedo usar Link to, que funciona como un a href */}
                 {/* <Link to="/">Inicio</Link> */}
