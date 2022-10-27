@@ -1,11 +1,10 @@
 // Importo el hook que me permite navegar entre las rutas de la aplicación
 import {useNavigate} from 'react-router-dom';
-
 // Importo los componentes
-import Button from '../../Components/button';
-import Header from '../../Components/header';
+import Button from '../../Components/Button';
+import Header from '../../Components/Header';
 // Importo el banner desde assets
-import fondo from '../../assets/fondo.png';
+import fondo from '../../assets/fondo.jpg';
 
 // Creo el componente Home
 function Home() {
@@ -17,7 +16,7 @@ function Home() {
     };
 
     // Establezco un hook, use state para cambiar el color de un botón cuando se le haga click
-    const [color, setColor] = useState(initialColor);
+    // const [color, setColor] = useState(initialColor);
 
     // Establesco el código a retornar
     return (
@@ -27,19 +26,23 @@ function Home() {
                 <Header/>
                 {/* Uso el componente, poniendo la información de sus props */}
                 {/* <Button content="Saber más" onclick={()=>alert(alert="La funcionalidad no está creada, saludos")}/> */}
+                
                 {/* Creo un botón que implementa la función onClickButton para ir a la ruta indicada */}
                 {/* Implemento Bulma para los estilos */}
-                <section className='hero is-success is-medium is-fullheight' style={{backgroundImage:`url($background)`, backgroundSize:'cover'}}>
+                
+                <section className='hero is-success is-medium is-fullheight' style={{backgroundImage:`url(${fondo})`, backgroundSize:'cover'}}>
                     <div className='hero-body'>
                         <div className='container has-text-centered'>
-                            <Button onclick={() => onClickButton("/game")} content="Ezequiel Signorini" className='title'/>
+                            {/* Uso onclickButton para navegar a game */}
+                            {/* <Button onclick={() => onClickButton("/game")} content="Ezequiel Signorini" className='title'/> */}
+                            
+                            <Button onClick={() => navigate('/game')} content="Ezequiel Signorini" className='title'/>
                         </div>
                     </div>
                 </section>
 
                 {/* Para ir a un sitio puedo usar Link to, que funciona como un a href */}
                 {/* <Link to="/">Inicio</Link> */}
-                {/* Creo un botón que cambie de color con el uso de useState */}
                 
             </header>
         </div>
