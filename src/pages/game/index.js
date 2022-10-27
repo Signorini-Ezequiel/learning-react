@@ -12,7 +12,7 @@ function Game() {
                     <ul>
                         <li className='is-active'>
                             <a href="/">
-                                <span className="icon">
+                                <span className="icon is-small">
                                     <i className="fas fa-home" aria-hidden="true"></i>
                                 </span>
                                 <span>Inicio</span>
@@ -20,7 +20,7 @@ function Game() {
                         </li>
                     </ul>
                 </nav>
-                <section className="hero is-info is-medium">
+                <section className="hero is-info is-medium is-fullheight">
                     <div className="hero-body">
                         <p className="title">Esta es la página del juego</p>
                     </div>

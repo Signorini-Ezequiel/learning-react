@@ -5,6 +5,7 @@ import Button from '../../Components/Button';
 import Header from '../../Components/Header';
 // Importo el banner desde assets
 import fondo from '../../assets/fondo.jpg';
+import fondo2 from '../../assets/fondo2.jpg';
 
 // Creo el componente Home
 function Home() {
@@ -30,13 +31,13 @@ function Home() {
                 {/* Creo un botón que implementa la función onClickButton para ir a la ruta indicada */}
                 {/* Implemento Bulma para los estilos */}
                 
-                <section className='hero is-success is-medium is-fullheight' style={{backgroundImage:`url(${fondo})`, backgroundSize:'cover'}}>
+                <section className='hero is-success is-medium is-fullheight' style={{backgroundImage:`url(${fondo2})`, backgroundSize:'cover'}}>
                     <div className='hero-body'>
                         <div className='container has-text-centered'>
                             {/* Uso onclickButton para navegar a game */}
-                            {/* <Button onclick={() => onClickButton("/game")} content="Ezequiel Signorini" className='title'/> */}
-                            
-                            <Button onClick={() => navigate('/game')} content="Ezequiel Signorini" className='title'/>
+                            <Button onclick={() => onClickButton("/game")} content="Ezequiel Signorini" className='title'/>
+                            {/* También puedo ejecutarlo directamente desde navigate */}
+                            {/* <Button onClick={() => navigate('/game')} content="Ezequiel Signorini" className='title'/> */}
                         </div>
                     </div>
                 </section>
