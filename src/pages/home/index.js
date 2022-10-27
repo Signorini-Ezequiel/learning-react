@@ -4,6 +4,8 @@ import {useNavigate} from 'react-router-dom';
 // Importo los componentes
 import Button from '../../Components/button';
 import Header from '../../Components/header';
+// Importo el banner desde assets
+import fondo from '../../assets/fondo.png';
 
 // Creo el componente Home
 function Home() {
@@ -26,7 +28,14 @@ function Home() {
                 {/* Uso el componente, poniendo la información de sus props */}
                 {/* <Button content="Saber más" onclick={()=>alert(alert="La funcionalidad no está creada, saludos")}/> */}
                 {/* Creo un botón que implementa la función onClickButton para ir a la ruta indicada */}
-                <Button onclick={() => onClickButton("/game")} content="Ezequiel Signorini"/>
+                {/* Implemento Bulma para los estilos */}
+                <section className='hero is-success is-medium is-fullheight' style={{backgroundImage:`url($background)`, backgroundSize:'cover'}}>
+                    <div className='hero-body'>
+                        <div className='container has-text-centered'>
+                            <Button onclick={() => onClickButton("/game")} content="Ezequiel Signorini" className='title'/>
+                        </div>
+                    </div>
+                </section>
 
                 {/* Para ir a un sitio puedo usar Link to, que funciona como un a href */}
                 {/* <Link to="/">Inicio</Link> */}

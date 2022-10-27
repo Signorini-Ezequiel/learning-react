@@ -4,7 +4,11 @@ import './button.css';
 function Button (props){
     return(
         // Creo el contenido a mostrar por el componente, que usa los props
-        <button className="basic-button">{props.content}</button>
+        // <button className="basic-button">{props.content}</button>
+        // Creo un botón aplicando estilos desde Bulma
+        <button className="button is-primary">{props.content}</button>
+        // is-primary: color primario
+        // is-large: agranda el botón
     );
 }
 

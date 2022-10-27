@@ -1,4 +1,7 @@
+// Importo el CSS propio
 import './App.css';
+// Importo el framework Bulma
+import 'bulma/css/bulma.min.css';
 // Importo React-router-dom que es una librería de react para manejar rutas
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 // Importo las páginas a rutear
