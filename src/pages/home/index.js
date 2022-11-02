@@ -31,7 +31,7 @@ function Home() {
                 {/* Creo un botón que implementa la función onClickButton para ir a la ruta indicada */}
                 {/* Implemento Bulma para los estilos */}
                 
-                <section className='hero is-success is-medium is-fullheight' style={{backgroundImage:`url(${fondo2})`, backgroundSize:'cover'}}>
+                <section className='container hero is-success is-medium is-fullheight' style={{backgroundImage:`url(${fondo2})`, backgroundSize:'cover'}}>
                     <div className='hero-body'>
                         <div className='container has-text-centered'>
                             {/* Uso onclickButton para navegar a game */}
