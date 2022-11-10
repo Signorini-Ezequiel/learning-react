@@ -9,9 +9,10 @@ function Header(){
                     <li><a href="">Ayuda</a></li>
                     <li><a href="">Contacto</a></li>
                     <li><a href="">Descargas</a></li>
+                    <li><a href="/">Inicio</a></li>
                 </ul>
                 <ul className="right">
-                    <Button content="Inicio"/>
+                    <Button content="Juego" link='/game'/>
                 </ul>
             </nav>
         </div>

@@ -1,5 +1,7 @@
 // Importo el hook que me permite navegar entre las rutas de la aplicación
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+// Importo el hook que permite cambiar de estados a un componente
+import { useState } from "react";
 // Importo los componentes
 import Button from '../../Components/Button';
 import Header from '../../Components/Header';
@@ -15,9 +17,9 @@ function Home() {
     const onClickButton = url => {
         navigate(url);
     };
-
-    // Establezco un hook, use state para cambiar el color de un botón cuando se le haga click
-    // const [color, setColor] = useState(initialColor);
+    
+    // Establezco un hook, use state para cambiar el fondo cuando se le haga click
+    const [changeBackground, setChangeBackground] = useState(fondo);
 
     // Establesco el código a retornar
     return (
@@ -31,11 +33,13 @@ function Home() {
                 {/* Creo un botón que implementa la función onClickButton para ir a la ruta indicada */}
                 {/* Implemento Bulma para los estilos */}
                 
-                <section className='container hero is-success is-medium is-fullheight' style={{backgroundImage:`url(${fondo2})`, backgroundSize:'cover'}}>
+                <section className='hero is-medium is-fullheight' style={{backgroundImage:`url(${changeBackground})`, backgroundSize:'cover'}}>
                     <div className='hero-body'>
                         <div className='container has-text-centered'>
                             {/* Uso onclickButton para navegar a game */}
-                            <Button onclick={() => onClickButton("/game")} content="Ezequiel Signorini" className='title'/>
+                            <Button onclick={() => onClickButton("/game")} content="Ezequiel Signorini" className='title mb-6'/>
+                            <br/>
+                            <button onclick={() => setChangeBackground(fondo2)} className="button is-light">Cambiar fondo</button>
                             {/* También puedo ejecutarlo directamente desde navigate */}
                             {/* <Button onClick={() => navigate('/game')} content="Ezequiel Signorini" className='title'/> */}
                         </div>
@@ -44,7 +48,6 @@ function Home() {
 
                 {/* Para ir a un sitio puedo usar Link to, que funciona como un a href */}
                 {/* <Link to="/">Inicio</Link> */}
-                
             </header>
         </div>
     );
