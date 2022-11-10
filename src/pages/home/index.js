@@ -1,5 +1,5 @@
 // Importo el hook que me permite navegar entre las rutas de la aplicación
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 // Importo el hook que permite cambiar de estados a un componente
 import { useState } from "react";
 // Importo los componentes
@@ -9,6 +9,7 @@ import Header from '../../Components/Header';
 import fondo from '../../assets/fondo.jpg';
 import fondo2 from '../../assets/fondo2.jpg';
 
+
 // Creo el componente Home
 function Home() {
     // Creo la variable que almacenará la funcionalidad de useNavigate
@@ -17,7 +18,7 @@ function Home() {
     const onClickButton = url => {
         navigate(url);
     };
-    
+
     // Establezco un hook, use state para cambiar el fondo cuando se le haga click
     const [changeBackground, setChangeBackground] = useState(fondo);
 
@@ -25,8 +26,9 @@ function Home() {
     return (
         <div className="App">
             <header className="App-header">
-            {/* Uso el componente */}
+                {/* Uso el componente */}
                 <Header/>
+
                 {/* Uso el componente, poniendo la información de sus props */}
                 {/* <Button content="Saber más" onclick={()=>alert(alert="La funcionalidad no está creada, saludos")}/> */}
                 
@@ -37,9 +39,9 @@ function Home() {
                     <div className='hero-body'>
                         <div className='container has-text-centered'>
                             {/* Uso onclickButton para navegar a game */}
-                            <Button onclick={() => onClickButton("/game")} content="Ezequiel Signorini" className='title mb-6'/>
+                            <Button onClick={() => onClickButton("/game")} content="Ezequiel Signorini" className='title mb-6'/>
                             <br/>
-                            <button onclick={() => setChangeBackground(fondo2)} className="button is-light">Cambiar fondo</button>
+                            <button onClick={() => setChangeBackground(fondo2)} className="button is-light">Cambiar fondo</button>
                             {/* También puedo ejecutarlo directamente desde navigate */}
                             {/* <Button onClick={() => navigate('/game')} content="Ezequiel Signorini" className='title'/> */}
                         </div>
