@@ -3,6 +3,7 @@ import Header from '../../Components/Header';
 // Importo el hook que permite cambiar de estados a un componente
 import { useState, useEffect } from "react";
 import QuestionCard from '../../Components/QuestionCard';
+import { Link } from "react-router-dom";
 
 // Importo la API
 const API_URL = "https://62bb6e36573ca8f83298fbef.mockapi.io/metcampweb22/v1/questions/harry-potter";
@@ -12,8 +13,6 @@ function Game() {
     const [loading, setLoading] = useState(true);
     // Establezco un hook, use state para cargar las preguntas de la API en un array
     const [questions, setQuestions] = useState([]);
-    console.log(questions);
-
 
     useEffect(() => {
         fetch(API_URL)
@@ -26,7 +25,7 @@ function Game() {
 
     
     return (
-        <div className="App">
+        <div className="container">
             <header className="App-header">
                 <Header/>
                 {
@@ -39,7 +38,7 @@ function Game() {
                         <form>
                             {
                                 questions.map((pregunta) => {
-                                    return <QuestionCard preguntaActual={pregunta}/>
+                                    return <QuestionCard key={pregunta.id} preguntaActual={pregunta}/>
                                 })
                             }
                         </form>
@@ -47,20 +46,6 @@ function Game() {
                 }
                 {/* Otra forma de poner un loader es */}
                 {/* <div>{loading ? 'Cargando...' : 'Preguntas cargadas'}</div> */}
-
-                <section className="hero is-info is-medium is-fullheight">
-                    <div className="hero-body">
-                        <p className="title">Esta es la página del juego</p>
-                    </div>
-
-                    <form>
-                        {
-                            questions.map((question) => {
-                                return <QuestionCard/>
-                            })
-                        }
-                    </form>
-                </section>
             </header>
         </div>
     );
