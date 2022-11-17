@@ -11,12 +11,12 @@ function QuestionCard({ preguntaActual }) {
                         <div key={option.id}>
                             <input type="radio" id={`${option.id}`} value={option.answer} name={option.id}></input>
                             <label htmlFor={`${option.id}`}>{option.answer}</label>
-                            <br/>
-                        <div/>
-                    ))
-                }
-                <br/>
-            </div>
+                    <br/>
+                    <div/>
+                ))
+            }
+            <br/>
+        </div>
         </div>
     )
 }

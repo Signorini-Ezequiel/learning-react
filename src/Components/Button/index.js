@@ -2,12 +2,12 @@
 import './button.css';
 
 // Estructura de un componente en donde incluyo props para personalizar información cada vez que se usa
-function Button (props){
+function Button ({onClick, text}){
     return(
         // Creo el contenido a mostrar por el componente, que usa los props
         // <button className="basic-button">{props.content}</button>
         // Creo un botón aplicando estilos desde Bulma
-        <button className="button is-primary"><a href={props.link}>{props.content}</a></button>
+        <button onClick={onClick} className="button is-primary is-large">{text}</button>
         // is-primary: color primario
         // is-large: agranda el botón
     );
