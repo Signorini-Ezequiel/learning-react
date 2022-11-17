@@ -12,6 +12,10 @@ function Game() {
     const [loading, setLoading] = useState(true);
     // Establezco un hook, use state para cargar las preguntas de la API en un array
     const [questions, setQuestions] = useState([]);
+    // Establezco un estado para avisar cuando una respuesta es elegida
+    const [selectedAnswers, setSelectedAnswers] = useState([]);
+    // Establezco un estado para calcular el resultado mientras se responde
+    const [result, setResult] = useState(0);
 
     useEffect(() => {
         fetch(API_URL)
@@ -37,7 +41,7 @@ function Game() {
                         <form>
                             {
                                 questions.map((pregunta) => {
-                                    return <QuestionCard key={pregunta.id} preguntaActual={pregunta}/>
+                                    return <QuestionCard key={pregunta.id} preguntaActual={pregunta} selectedAnswers={selectedAnswers} setSelectedAnswers={setSelectedAnswers}/> // Pongo como clave el ID de la pregunta, con la pregunta actual y las respuestas seleccionadas para contabilizarlas
                                 })
                             }
                         </form>
@@ -45,6 +49,10 @@ function Game() {
                 }
                 {/* Otra forma de poner un loader es */}
                 {/* <div>{loading ? 'Cargando...' : 'Preguntas cargadas'}</div> */}
+                <div className='level-right'>
+                    <button disabled={disabled} onClick={() => console.log('hola')} className='button is-primary level-item'>Validar</button>
+                    <Button disabled={true} onClick={() => console.log('hola')} text='validar'/>
+                </div>
             </header>
         </div>
     );

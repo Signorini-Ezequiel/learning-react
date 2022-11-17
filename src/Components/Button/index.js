@@ -11,7 +11,7 @@ function Button ({onClick, text}){
         // is-primary: color primario
         // is-large: agranda el botón
     );
-}
+};
 
 // Estructura para exportar un componente y permitir su uso
 export default Button;
