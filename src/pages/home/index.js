@@ -1,5 +1,5 @@
 // Importo el hook que me permite navegar entre las rutas de la aplicación
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // Importo el hook que permite cambiar de estados a un componente
 import { useState } from "react";
 // Importo los componentes
@@ -39,7 +39,7 @@ function Home() {
                     <div className='hero-body'>
                         <div className='container has-text-centered'>
                             {/* Uso onclickButton para navegar a game */}
-                            <Button onClick={() => onClickButton("/game")} content="Ezequiel Signorini" className='title mb-6'/>
+                            <Button onClick={() => onClickButton("/game")} text="Ezequiel Signorini" className='title mb-6'/>
                             <br/>
                             <button onClick={() => setChangeBackground(fondo2)} className="button is-light">Cambiar fondo</button>
                             {/* También puedo ejecutarlo directamente desde navigate */}

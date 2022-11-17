@@ -12,7 +12,7 @@ function Header(){
                     <li><a href="/">Inicio</a></li>
                 </ul>
                 <ul className="right">
-                    <Button content="Juego" link='/game'/>
+                    <Button text="Juego" onClick="/game"/>
                 </ul>
             </nav>
         </div>
