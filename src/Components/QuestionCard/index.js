@@ -1,4 +1,4 @@
-function QuestionCard({ preguntaActual, selectedAnswers, setSelectedAnswers }) {
+function QuestionCard({ preguntaActual, selectedAnswers, setSelectedAnswers, mostrarResultado }) {
     console.log(preguntaActual.answers);
 
     function seleccionarRespuesta(valorid, valorOpcion) {
@@ -6,7 +6,10 @@ function QuestionCard({ preguntaActual, selectedAnswers, setSelectedAnswers }) {
         const otrasRespuestas = selectedAnswers.filter((respuesta) => respuesta.id !== valorid);
         setSelectedAnswers([
             ...otrasRespuestas,
-            {id:valorid, valorOpcion}
+            {
+                id:valorid,
+                valorOpcion
+            }
         ]); // Establezco los cambios en una réplica del objeto con los valores actualizados
     };
 
@@ -24,7 +27,17 @@ function QuestionCard({ preguntaActual, selectedAnswers, setSelectedAnswers }) {
                             name={preguntaActual.id}
                             value={option.answer}
                             ></input>
-                            <label htmlFor={`${preguntaActual.id}`}>{option.answer}</label>
+                            <label
+                            htmlFor={`${preguntaActual.id}`}
+                            // Agrego la clase para el color que indica si está bien o mal la respuesta en base a si se muestra el resultado, True: ve si la opción es correcta o no y establece el color, False: no establece ninguna clase
+                            className={
+                                mostrarResultado ? 
+                                option.is_correct ? 'has-text-primary' : 'has-text-danger'
+                                : ''
+                            }
+                            >
+                                {option.answer}
+                            </label>
                     <br/>
                     </div>
                 ))

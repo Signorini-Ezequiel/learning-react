@@ -16,6 +16,15 @@ function Game() {
     const [selectedAnswers, setSelectedAnswers] = useState([]);
     // Establezco un estado para calcular el resultado mientras se responde
     const [result, setResult] = useState(0);
+    // Establezco un estado para conocer si se debe mostrar el resultado o no
+    const [mostrarResultado, setMostrarResultado] = useState(false);
+
+    // Creo una función en que se va a calcular el resultado de las respuestas correctas del cuestionario
+    function calcularResultado(){
+        const respuestasCorrectas = selectedAnswers.filter((respuesta) => respuesta.valorOpcion === true);
+        setResult(respuestasCorrectas.length);
+        setMostrarResultado(true);
+    };
 
     useEffect(() => {
         fetch(API_URL)
@@ -41,7 +50,14 @@ function Game() {
                         <form>
                             {
                                 questions.map((pregunta) => {
-                                    return <QuestionCard key={pregunta.id} preguntaActual={pregunta} selectedAnswers={selectedAnswers} setSelectedAnswers={setSelectedAnswers}/> // Pongo como clave el ID de la pregunta, con la pregunta actual y las respuestas seleccionadas para contabilizarlas
+                                    return <
+                                        QuestionCard key={pregunta.id}
+                                        preguntaActual={pregunta}
+                                        selectedAnswers={selectedAnswers}
+                                        setSelectedAnswers={setSelectedAnswers}
+                                        mostrarResultado={mostrarResultado}
+                                        /> 
+                                        // Pongo como clave el ID de la pregunta, con la pregunta actual y las respuestas seleccionadas para contabilizarlas
                                 })
                             }
                         </form>
@@ -50,8 +66,17 @@ function Game() {
                 {/* Otra forma de poner un loader es */}
                 {/* <div>{loading ? 'Cargando...' : 'Preguntas cargadas'}</div> */}
                 <div className='level-right'>
-                    <button disabled={disabled} onClick={() => console.log('hola')} className='button is-primary level-item'>Validar</button>
-                    <Button disabled={true} onClick={() => console.log('hola')} text='validar'/>
+                    {/* ¿Qué significa '&&'? */}
+                    {/* Establezco una verificación para mostrar el resultado solo si se respondieron a todas las preguntas */}
+                    {
+                        mostrarResultado &&
+                        <p>{result}</p>
+                    }
+                    {/* Creo un botón para hacer la validación de datos */}
+                    {/* <button disabled={disabled} onClick={() => console.log('hola')} className='button is-primary level-item'>Validar</button> */}
+                    <Button disabled={
+                        selectedAnswers?.length !== questions?.length
+                    } onClick={() => calcularResultado} text='validar'> </Button>
                 </div>
             </header>
         </div>
