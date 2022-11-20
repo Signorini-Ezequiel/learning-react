@@ -1,5 +1,5 @@
 // Importo el hook que me permite navegar entre las rutas de la aplicación
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 // Importo el hook que permite cambiar de estados a un componente
 import { useState } from "react";
 // Importo los componentes

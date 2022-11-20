@@ -1,18 +1,19 @@
+import { Link } from 'react-router-dom';
 import './header.css';
-import Button from '../Button';
 
 function Header(){
     return(
         <div className="header">
             <nav>
                 <ul className='left'>
-                    <li><a href="">Ayuda</a></li>
-                    <li><a href="">Contacto</a></li>
-                    <li><a href="">Descargas</a></li>
-                    <li><a href="/">Inicio</a></li>
+                    <Link to="/">Ayuda</Link>
+                    <Link to="/">Contacto</Link>
+                    <Link to="/">Descargas</Link>
+                    <Link to="/">Inicio</Link>
                 </ul>
                 <ul className="right">
-                    <Button text="Juego" onClick="/game"/>
+                    {/* <Button text="Juego" onClick="/game"/> En React se emplea Link*/}
+                    <Link to="/game">Juego</Link>
                 </ul>
             </nav>
         </div>
