@@ -3,6 +3,7 @@ import Header from '../../Components/Header';
 // Importo el hook que permite cambiar de estados a un componente
 import { useState, useEffect } from "react";
 import QuestionCard from '../../Components/QuestionCard';
+import Button from '../../Components/Button';
 
 // Importo la API
 const API_URL = "https://62bb6e36573ca8f83298fbef.mockapi.io/metcampweb22/v1/questions/harry-potter";

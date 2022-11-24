@@ -48,4 +48,4 @@ function QuestionCard({ preguntaActual, selectedAnswers, setSelectedAnswers, mos
     )
 }
 
-export default QuestionCard
+export default QuestionCard;
