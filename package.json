@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
+    "name": "project1",
     "homepage": "https://github.com/Signorini-Ezequiel/learning-react.git",
     "version": "0.1.0"
   }
